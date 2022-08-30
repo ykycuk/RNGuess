@@ -1,6 +1,4 @@
-import { Text, StyleSheet } from 'react-native'
-
-import Colors from '../../constants/colors';
+import { Text, StyleSheet, Platform } from 'react-native'
 
 function Title({children}) {
     return (
@@ -14,13 +12,15 @@ export default Title;
 
 const styles = StyleSheet.create({
     title: {
-        // fontFamily: 'open-sans-bold', // download zip
+        fontFamily: 'open-sans-bold', // download zip
         fontSize: 24,
-        fontWeight: 'bold',
+        // fontWeight: 'bold',
         color: "white",
         textAlign: "center",
-        borderWidth: 2,
+        // borderWidth: Platform.OS === 'android' ? 2 : 0,
         borderColor: "white",
-        padding: 12
+        padding: 12,
+        maxWidth: '80%',
+        width: 300,
     }
 })
